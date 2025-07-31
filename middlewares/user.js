@@ -13,6 +13,10 @@ const validateUserFieldsRegister = [
     .withMessage("password is required")
     .isLength({ min: 6 })
     .withMessage("Password must be at least 6 characters")
+    .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{6,}$/)
+    .withMessage(
+      "Password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character."
+    )
     .isLength({ max: 12 })
     .withMessage("Password mush be below 12 characters"),
   body("role")
@@ -22,7 +26,17 @@ const validateUserFieldsRegister = [
 
 const validateUserFielsLogin = [
   body("user_id").notEmpty().withMessage("user id required"),
-  body("password").notEmpty().withMessage("password is required"),
+  body("password")
+    .notEmpty()
+    .withMessage("password is required")
+    .isLength({ min: 6 })
+    .withMessage("Password must be at least 6 characters")
+    .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{6,}$/)
+    .withMessage(
+      "Password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character."
+    )
+    .isLength({ max: 12 })
+    .withMessage("Password mush be below 12 characters"),
 ];
 
 function validateUserSchema(req, res, next) {
