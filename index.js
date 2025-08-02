@@ -1,7 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
-const userRouter = require("./routes/user");
+const userRoutes = require("./routes/user");
+const categoryRoutes = require("./routes/category");
 require("dotenv").config();
 const port = process.env.PORT || 8080;
 const url = process.env.MONGODB_URL;
@@ -11,7 +12,8 @@ app.get("/", (req, res) => {
   res.send("hello");
 });
 
-app.use("/api/v1/user", userRouter);
+app.use("/api/v1/user", userRoutes);
+app.use("/api/v1/category", categoryRoutes);
 
 function connectToMongoDB() {
   mongoose.connect(url);

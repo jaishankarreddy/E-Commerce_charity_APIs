@@ -5,7 +5,6 @@ const jwt = require("jsonwebtoken");
 
 async function registeruser(req, res) {
   try {
-    console.log(req.body);
     let { name, email, mobile, password, role } = req.body;
 
     // Check for existing user
@@ -83,7 +82,7 @@ async function login(req, res) {
       if (result) {
         // If password matched then create token
         jwt.sign(
-          { user_id: existing_user._id, email: existing_user.email },
+          { user_id: existing_user._id, email: existing_user.email,role:existing_user.role },
           process.env.JWT_SECRET,
           { expiresIn: "1h" },
           (err, token) => {

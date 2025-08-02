@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { registeruser, login } = require("../controllers/user");
+
 const {
   validateUserFieldsRegister,
   validateUserSchema,
@@ -13,6 +14,7 @@ router.post(
   validateUserSchema,
   registeruser
 );
+
 router.post("/login", validateUserFielsLogin, validateUserSchema, login);
 
 module.exports = router;
