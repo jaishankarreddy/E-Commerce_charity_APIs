@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const app = express();
 const userRoutes = require("./routes/user");
 const categoryRoutes = require("./routes/category");
+const charityRouters = require("./routes/charity");
 require("dotenv").config();
 const port = process.env.PORT || 8080;
 const url = process.env.MONGODB_URL;
@@ -14,6 +15,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/v1/user", userRoutes);
 app.use("/api/v1/category", categoryRoutes);
+app.use("/api/v1/charity", charityRouters);
 
 function connectToMongoDB() {
   mongoose.connect(url);
