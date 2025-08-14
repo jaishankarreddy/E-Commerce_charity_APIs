@@ -54,4 +54,6 @@ const charitySchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("Charity", charitySchema);
+let charity = mongoose.model("Charity", charitySchema);
+
+module.exports = charity

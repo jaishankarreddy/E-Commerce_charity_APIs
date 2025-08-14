@@ -15,7 +15,6 @@ async function createCharity(req, res) {
     } = req.body;
 
     const user = req.user;
-    console.log(user.role);
     // Role check
     if (!["admin", "super_admin"].includes(user.role)) {
       return res.status(403).json({

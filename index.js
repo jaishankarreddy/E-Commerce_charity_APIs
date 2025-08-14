@@ -4,6 +4,8 @@ const app = express();
 const userRoutes = require("./routes/user");
 const categoryRoutes = require("./routes/category");
 const charityRouters = require("./routes/charity");
+const productRouters = require("./routes/product");
+
 require("dotenv").config();
 const port = process.env.PORT || 8080;
 const url = process.env.MONGODB_URL;
@@ -16,6 +18,7 @@ app.get("/", (req, res) => {
 app.use("/api/v1/user", userRoutes);
 app.use("/api/v1/category", categoryRoutes);
 app.use("/api/v1/charity", charityRouters);
+app.use("/api/v1/product", productRouters);
 
 function connectToMongoDB() {
   mongoose.connect(url);
