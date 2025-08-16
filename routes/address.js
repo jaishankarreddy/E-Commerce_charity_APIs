@@ -7,8 +7,9 @@ const {
   updateAddress,
   deleteAddress,
 } = require("../controllers/address");
+const { addressValidationSchema, validateAddress } = require("../middlewares/address")
 
-router.post("/", authenticateUser, createAddress);
+router.post("/",addressValidationSchema, validateAddress, authenticateUser, createAddress);
 router.get("/", authenticateUser, getAddress);
 router.put("/:id", authenticateUser, updateAddress);
 router.delete("/:id", authenticateUser, deleteAddress);
