@@ -32,16 +32,10 @@ Secure API structure with modular controllers, routes & models
 ⚙️ Tech Stack
 
 Backend Framework: Express.js
-
 Database: MongoDB + Mongoose
-
 Authentication: JWT
-
 Validation: express validatior
-
 Mail & Notifications: Nodemailer, Twilio 
-
-
 
 🛠️ Installation & Setup
 
