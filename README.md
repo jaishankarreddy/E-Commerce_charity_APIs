@@ -26,7 +26,7 @@ Secure API structure with modular controllers, routes & models
 
 ├── utils/           # Utility functions (mailer, SMS, helpers)
 
-├── server.js        # Entry point
+├── index.js        # Entry point
 
 
 ⚙️ Tech Stack
