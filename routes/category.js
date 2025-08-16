@@ -9,16 +9,9 @@ const {
   updateCategoryTitle,
 } = require("../controllers/category");
 
-// 1. Create category (admin / super_admin only)
 router.post("/", authenticateUser, upload.single("image"), createCategory);
-
-// 2. Admin panel (admin own only, super_admin  all)
 router.get("/admin", authenticateUser, getCategoriesForAdmins);
-
-// 3. Update category title
 router.patch("/:id", authenticateUser, updateCategoryTitle);
-
-// 4. Public endpoint to fetch all categories
 router.get("/", getPublicCategories);
 
 module.exports = router;
