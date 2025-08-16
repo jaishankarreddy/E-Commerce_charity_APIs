@@ -15,12 +15,19 @@ Secure API structure with modular controllers, routes & models
 
 📂 Project Structure
 ├── controllers/     # Business logic for APIs
+
 ├── models/          # Mongoose models (User, Product, Charity, Order, etc.)
+
 ├── routes/          # API routes
+
 ├── middlewares/     # Authentication, validation, error handlers
+
 ├── config/          # Database & third-party configs
+
 ├── utils/           # Utility functions (mailer, SMS, helpers)
+
 ├── server.js        # Entry point
+
 
 ⚙️ Tech Stack
 
